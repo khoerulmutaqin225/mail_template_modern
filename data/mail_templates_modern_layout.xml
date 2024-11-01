@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Delete header and footer mail template -->
+        <template id="mail_templates_modern_layout"
+                  name="Mail: mail notification layout template (remove powered odoo and replace image)"
+                   inherit_id="mail.mail_notification_layout" primary="True">
+            <data name="Mail: mail notification layout template (remove powered odoo and replace image)" inherit_id="mail.mail_notification_layout" primary="True">
+                <xpath expr="//div[@t-if='subtitles or has_button_access or actions or not is_discussion']" position="replace">
+                    <tr style="background-color:#5D77A9;">
+                        <td width="100%" style="height:100px; text-align:center; color:white; font-family:'Courier New';  font-size: 40px;">
+    
+                            <!-- img from odoo sh-->
+                            <!--<img src="'/logo.png?company=%s' % company.id" style="height:80%; vertical-align:middle; filter: brightness(0) invert(1);"/>-->
+
+                              <!-- img from netlify hosting-->
+                            <img style="height:80%; vertical-align:middle; filter: brightness(0) invert(1); " src="https://doodex.netlify.app/src/img/LogoConfortEteau.png"/>
+
+                        </td>
+                    </tr>
+                </xpath>
+                <xpath expr="//div[contains(@style, 'margin-top:32px;')]" position="replace"/>
+                <xpath expr="//div[contains(@style, 'color: #555555; font-size:11px;')]" position="replace">
+                    <!--footer-->
+                    <table width="100%" style="border: none;" cellspacing="0" cellpadding="0">
+                        <tbody style="background-color:#5D77A9;">
+                            
+                            <!-- section if use img for footer -->
+
+                            <!-- <tr>
+                                <td width="100%" style="height:100px; text-align:center; color:white; font-family:'Courier New';  font-size: 40px;">
+                                    <img style="height:80%; vertical-align:middle; filter: brightness(0) invert(1);" src="https://doodex.netlify.app/src/img/LogoConfortEteau.png"/>
+                                </td>
+                            </tr> -->
+
+                            <tr>
+                                <td>
+                                    <div style="color:#f9f9f9;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;font-size:12px;line-height:150%;text-align:center">
+                                        <p style="font-family:'Courier New';font-size:30px">                                         
+                                            <t t-if="company.name">
+                                                <span t-out="company.name"/>
+                                            </t>
+                                            <t t-if="not company.name">
+                                                <span>CONFORTETEAU</span>
+                                            </t>
+                                        </p>
+                                    </div>
+                                    <div style="color:#f9f9f9;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;font-size:12px;line-height:150%;text-align:center">
+                                        <p>
+                                            <t t-if="company.street">
+                                                <span t-out="company.street"/>
+                                            </t>
+                                            <t t-if="not company.street">
+                                                <span>JL.GARUDA, DIY YOGYAKARTA SLEMAN 55581</span>
+                                            </t>
+                                        </p>
+                                        <p>
+                                            <t t-if="company.email">
+                                                <span t-out="company.email"/>
+                                            </t>
+                                            <t t-if="not company.email">
+                                                <span>conforteteau@mail.com</span>
+                                            </t>
+                                      ,
+                                            <t t-if="company.mobile">
+                                                <span t-out="company.mobile"/>
+                                            </t>
+                                            <t t-if="not company.mobile">
+                                                <span>08111 1111 1111</span>
+                                            </t>
+                                        </p>
+                                        <p>
+                                            <t t-if="company.name">
+                                                Visit <span t-if="company.name" t-out="company.name"/>
+                                            </t>
+                                            <t t-if="not company.name">
+                                                <span>
+                                                    Visit www.conforteteau.net
+                                                </span>
+                                            </t>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <p style="color:#f9f9f9;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;font-size:12px;line-height:150%;text-align:center">
+                                            <t t-if="company.name">
+                                                Generate By
+                                                <span t-if="company.name" t-out="company.name"/>
+                                            </t>
+                                            <t t-if="not company.name">
+                                                <span> 
+                                                    Generate By www.conforteteau.net
+                                                </span>
+                                            </t>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </xpath>
+            </data>
+        </template>
+    </data>
+</odoo>
