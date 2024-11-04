@@ -27,7 +27,8 @@ Long description of module's purpose
     ],
     'assets': {
         'web.assets_backend': [
-            'mail_template_modern/static/src/core/common/composer.js'
+            'mail_template_modern/static/src/core/common/composer.js',
+            'mail_template_modern/static/src/core/common/chatter_extension.js'
         ],
     },
     # only loaded in demonstration mode
