@@ -70,10 +70,10 @@
                                             </t>
                                         </p>
                                         <p>
-                                            <t t-if="company.name">
-                                                Visit <span t-if="company.name" t-out="company.name"/>
+                                            <t t-if="company.website">
+                                                Visit <span t-if="company.website" t-out="company.website"/>
                                             </t>
-                                            <t t-if="not company.name">
+                                            <t t-if="not company.website">
                                                 <span>
                                                     Visit www.conforteteau.net
                                                 </span>
